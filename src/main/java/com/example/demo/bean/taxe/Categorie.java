@@ -1,4 +1,4 @@
-package com.example.demo.bean;
+package com.example.demo.bean.taxe;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,6 +14,7 @@ public class Categorie {
     private String libelle;
 
     public Long getId() {
+
         return id;
     }
 
