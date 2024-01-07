@@ -1,4 +1,4 @@
-package com.example.demo.dao.taxedao;
+package com.example.demo.dao.DAO;
 
 import com.example.demo.bean.taxe.EtatTaxeBoisson;
 import org.springframework.data.jpa.repository.JpaRepository;
