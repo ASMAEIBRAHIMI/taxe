@@ -22,6 +22,8 @@ public class Taxe {
 
     private double montantBase;
 
+
+
     public Long getId() {
         return id;
     }

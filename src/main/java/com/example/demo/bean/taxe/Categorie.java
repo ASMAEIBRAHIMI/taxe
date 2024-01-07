@@ -14,7 +14,6 @@ public class Categorie {
     private String libelle;
 
     public Long getId() {
-
         return id;
     }
 
