@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.bean.Commande;
 import com.example.demo.bean.taxe.Categorie;
 import com.example.demo.dao.taxedao.CategorieDao;
 import jakarta.transaction.Transactional;
@@ -10,20 +11,28 @@ import java.util.List;
 
 @Service
 public class CategorieService {
+    @Autowired
+    private CategorieDao categorieDao;
+    @Transactional
+    public Categorie deleteByCode(String code) {
+        return categorieDao.deleteByCode(code);
+    }
     public Categorie findByCode(String code) {
         return categorieDao.findByCode(code);
     }
-
     public List<Categorie> findAll() {
         return categorieDao.findAll();
     }
 
-    @Autowired
-    private CategorieDao categorieDao;
-
-    @Transactional
-
-    public Categorie deleteByCode(String code) {
-        return categorieDao.deleteByCode(code);
+    public int save(Categorie categorie){
+        if (findByCode(categorie.getCode())!=null) return -1;
+        else {
+            categorieDao.save(categorie);
+            return 1;
+        }
+    }
+    public int update(Categorie categorie){
+        if (findByCode(categorie.getCode())==null) return -1;
+        else return 1;
     }
 }
