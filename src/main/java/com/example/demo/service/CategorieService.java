@@ -2,7 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.bean.Commande;
 import com.example.demo.bean.taxe.Categorie;
-import com.example.demo.dao.taxedao.CategorieDao;
+import com.example.demo.dao.DAO.CategorieDao;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,7 @@ public class CategorieService {
     @Autowired
     private CategorieDao categorieDao;
     @Transactional
-    public Categorie deleteByCode(String code) {
+    public int deleteByCode(String code) {
         return categorieDao.deleteByCode(code);
     }
     public Categorie findByCode(String code) {
