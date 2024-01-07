@@ -20,11 +20,11 @@ public class LocaleWs {
         return localeService.findByRef(ref);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/ref/{ref}")
     public int deleteByRef(String ref) {
         return localeService.deleteByRef(ref);
     }
-    @PostMapping
+    @PostMapping("/")
     public int save(@RequestBody Locale locale) {
         return localeService.save(locale);
     }
