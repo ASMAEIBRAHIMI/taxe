@@ -28,6 +28,7 @@ public class LocaleWs {
     public int save(@RequestBody Locale locale) {
         return localeService.save(locale);
     }
+
     @GetMapping("/")
     public List<Locale> findAll() {
         return localeService.findAll();
